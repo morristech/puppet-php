@@ -1,6 +1,6 @@
 class php::params {
-    case $::operatingsystem {
-        'ubuntu', 'debian': {
+    case $::osfamily {
+        'Debian': {
             $base_dir = "/etc/php5/"
             $cli_dir = "${base_dir}cli/"
             $cli_ini = "${cli_dir}php.ini"
