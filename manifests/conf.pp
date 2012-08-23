@@ -19,10 +19,10 @@ define php::conf($ensure = present, $source = undef, $content = undef, $require 
         source  => $source ? {
             undef   => undef,
             true    => [
-                "puppet:///files/${fqdn}/etc/php5/conf.d/${file_name}",
-                "puppet:///files/${hostgroup}/etc/php5/conf.d/${file_name}",
-                "puppet:///files/${domain}/etc/php5/conf.d/${file_name}",
-                "puppet:///files/global/etc/php5/conf.d/${file_name}",
+                "puppet:///modules/php/${fqdn}/etc/php5/conf.d/${file_name}",
+                "puppet:///modules/php/${hostgroup}/etc/php5/conf.d/${file_name}",
+                "puppet:///modules/php/${domain}/etc/php5/conf.d/${file_name}",
+                "puppet:///modules/php/global/etc/php5/conf.d/${file_name}",
             ],
             default => "${source}${file_name}",
         },
